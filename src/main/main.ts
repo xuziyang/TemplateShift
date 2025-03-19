@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron'
+const { app, BrowserWindow } = require('electron')
 import { join } from 'path'
 
 function createWindow() {
@@ -17,7 +17,8 @@ function createWindow() {
     mainWindow.loadURL('http://localhost:5173')
     mainWindow.webContents.openDevTools()
   } else {
-    mainWindow.loadFile(join(__dirname, '../../dist/renderer/index.html'))
+    // In production, load from the packaged renderer directory
+    mainWindow.loadFile(join(app.getAppPath(), 'dist/renderer/index.html'))
   }
 }
 
