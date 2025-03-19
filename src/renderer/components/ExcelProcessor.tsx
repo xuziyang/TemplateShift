@@ -95,7 +95,7 @@ export default function ExcelProcessor() {
             city,
             registeredAddress: (row.registeredAddress || '').trim()
           };
-        }).filter(row => row !== null && row.phone !== '');
+        }).filter(row => row !== null && row.phone !== '' && row.province !== '' && row.city !== '');
         
         // 使用Map进行电话号码去重，保留最完整的记录
         const phoneMap = new Map<string, ExcelData>();
