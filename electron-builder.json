@@ -1,0 +1,24 @@
+{
+  "appId": "com.templateshift.app",
+  "productName": "TemplateShift",
+  "directories": {
+    "output": "dist"
+  },
+  "files": [
+    "dist-electron/**/*",
+    "dist/renderer/**/*",
+    "index.html"
+  ],
+  "asar": true,
+  "asarUnpack": ["**/*.{node,dll}"],
+  "win": {
+    "target": ["nsis"],
+    "icon": "src/assets/icon.ico"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true
+  }
+}
