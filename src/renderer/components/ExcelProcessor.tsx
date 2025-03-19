@@ -153,9 +153,9 @@ export default function ExcelProcessor() {
             row.legalRepresentative || row.customerName, // 优先使用法定代表人作为客户名
             row.phone,
             '', // 微信
-            row.companyName, // 来源使用公司名称
+            '', // 来源设置为空
             `${row.province}-${row.city}`, // 使用省份和城市信息
-            ''  // 备注
+            row.companyName  // 备注使用公司名称
           ])
         ]);
         XLSX.utils.book_append_sheet(exportWorkbook, exportWorksheet, 'Sheet1');
